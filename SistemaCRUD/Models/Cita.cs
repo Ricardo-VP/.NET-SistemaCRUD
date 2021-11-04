@@ -10,7 +10,7 @@ namespace SistemaCRUD.Models
 
         [Required]
         [StringLength(100)]
-        [Display(Name = "Titulo")]
+        [Display(Name = "Título")]
         public string Titulo { get; set; }
 
         [Required]
