@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using SistemaCRUD.Datos;
+using Microsoft.EntityFrameworkCore;
+
 namespace SistemaCRUD
 {
     public class Startup
@@ -23,6 +26,7 @@ namespace SistemaCRUD
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<contextoBD>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
         }
 
